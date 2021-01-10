@@ -1,97 +1,345 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sign UP</title>
-  </head>
-  <body>
-    <header>
-      <h1>Sign Up</h1>
-      <p>This is Sign UP page for you!</p>
-    </header>
-    <hr>
-    <main>
-    <!-- add form element-->
-      <form action="get.html" method="GET">
-        <section class="id">
-          <label for="id">ID:</label>
-          <input type="text" id="id" name="id "minlength="2" maxlength="8" required>
-        </section>
+
+<head>
+  <title>Sign UP</title>
+
+  <style>
+
+    /*Fonts*/
+
+    @import url('https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+    
+    /*Universal Styles*/
+
+    body {
+      background-color: #1a1c20;
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    section,
+    #submit,
+    footer {
+      width: 45%;
+      font-family: 'Alef',sans-serif;
+    } 
+
+    /*Header*/
+
+    header {
+      background-image: url("scott-hewitt-yj8m3cl_wXo-unsplash.jpg");
+      margin: 0;
+      width: 1000px;
+      height: 100px;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    header h1 {
+      color: white;
+      font-family: 'Georgia', serif;
+      font-size: 50px;
+      margin: 0;
+      text-align: center;
+      padding-top: 12px;
+      font-family: 'Vollkorn SC', serif;
+      font-weight: normal;
+      font-size: 65px;
+    }
+
+    /*Main*/
+
+    hr {
+      width: 100%;
+    }
+
+    section {
+      background-color: #212121;
+      color: white;
+      border-radius: 30px;
+    }
+
+    #top-hr {
+      margin: 40px;
+      transform: translateX(-40px);
+    }
+
+    #bottom-hr {
+      margin-top: -5px;
+      margin-bottom: 30px;
+    }
+
+    /*Privacy Section*/
+
+    .privacy {
+      margin: 0 auto;
+      margin-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .privacy h4 {
+      text-align: center;
+      margin: 0;
+      padding-top: 10px;
+      padding-bottom: 8px;
+    }
+
+    .privacy ul {
+      margin: 0;
+      padding-left: 68px;
+    }
+
+    .privacy ul li {
+      list-style: none;
+    }
+
+    .privacy ul li::before {
+      content: "\2022";
+      color: #fcf876;
+      font-weight: bold;
+      font-size: 30px;
+      display: inline-block;
+      margin-left: -1em;
+      margin-right: 1em;
+      transform: translate(12px, 4px);
+    }
+
+    .privacy input {
+      width: 150px;
+    }
+
+    .privacy select {
+      width: 158px;
+      height: 22px;
+      text-align: center;
+    }
+
+    .privacy label {
+      display: inline-block;
+      width: 120px;
+    }
+
+    /*Detail Section*/
+
+    .detail {
+      margin: 0 auto;
+      margin-top: 20px;
+      padding-bottom: 18px;
+
+      text-align: center;
+    }
+
+    .detail h4 {
+      text-align: center;
+      margin: 0;
+      padding-top: 13px;
+    }
+
+    .detail ul {
+      margin: 0;
+      padding-left: 0;
+    }
+
+    .detail ul li {
+      list-style: none;
+    }
+
+    .detail ul li::before {
+      content: "\2022";
+      color: #fcf876;
+      font-weight: bold;
+      font-size: 40px;
+      display: inline-block;
+      margin-bottom: 7px;
+    }
+
+
+    /*sibal*/
+    .character-input {
+      display: inline-block;
+      transform: translateX(6px);
+      margin-top: 5px;
+    }
+
+    input#character {
+      transform: translateY(4px);
+    }
+
+    .detail .type {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /*Dream Section*/
+
+    .dream {
+      margin: 0 auto;
+      margin-top: 20px;
+      padding-bottom: 21px;
+
+      text-align: center;
+    }
+
+    .dream h4 {
+      text-align: center;
+      margin: 0;
+      padding-top: 13px;
+    }
+
+    /*Submit*/
+
+    #submit {
+      display: inline-block;
+      position: sticky;
+      left: 100%;
+      bottom: 120px;
+      width: 100px;
+      height: 40px;
+
+      outline: 0;
+      background-color: #212121;
+      color: white;
+      font-weight: bold;
+      border-radius: 14px;
+      transition: all 1.2s linear;
+    }
+
+    #submit:hover {
+      background-color: #fcf876;
+      color: black;
+    }
+
+    /*footer*/
+    
+    footer {
+      color: white;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+  <main>
+
+    <form action="get.html" method="GET">
+      <hr id="top-hr">
+
+      
+      <!--Privacy Section-->
+
+      <section class="privacy">
+        <h4>Who you are</h4>
+        <ul>
+          <li>
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id " minlength="2" maxlength="8" required>
+          </li>
+          <li>
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" name="password" minlength="8" maxlength="16" required>
+          </li>
+          <li>
+            <label for="age">AGE</label>
+            <input type="number" id="age" name="age" required>
+          </li>
+          <li>
+            <label for="birth">DATE OF BIRTH</label>
+            <input type="text" id="birth" name="birth" required>
+          </li>
+          <li>
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </li>
+      </section>
+
+      <!--Detail Section-->
+
+      <section class="detail">
+        <h4>Details</h4>
+        <ul>
+          <li>
+            <br>
+            <span>Your Character</span>
+            <br>
+            <div class="character-input">
+              <span>Bad</span>
+              <input type="range" id="character" name="character" min="0" max="10" step="5">
+              <span>Good</span>
+            </div>
+          </li>
+          <li>
+            <br>
+            <label for="ramen">Which ramen do you like?</label>
+            <br>
+            <div class="type">
+              <label for="sinramen">Sinramen</label>
+              <input type="checkbox" id="sinramen" name="ramen">
+              <label for="jinramen">Jinramen</label>
+              <input type="checkbox" id="jinramen" name="ramen">
+              <label for="nuguri">Nuguri</label>
+              <input type="checkbox" id="nuguri" name="ramen">
+              <label for="jjapagetti">Jjapagetti</label>
+              <input type="checkbox" id="jjapagetti" name="ramen">
+            </div>
+          </li>
+          <li>
+            <br>
+            <label for="mint">Do you like MINT-CHOCOLATE?</label>
+            <br>
+            <div class="type">
+              <label for="yes">YES</label>
+              <input type="radio" id="yes" name="mint">
+              <label for="no">NO</label>
+              <input type="radio" id="no" name="mint">
+            </div>
+          </li>
+          <li>
+            <br>
+            <label for="chicken">What is your favorite chicken brand?</label>
+            <br>
+            <div class="type">
+              <input type="text" list="chickens" id="chicken" name="chicken" required>
+              <datalist id="chickens">
+                <option value="BBQ">Barbecue</option>
+                <option value="KFC">Kenturcky Fried Chicken</option>
+                <option value="GUBNE">Gubne chicken</option>
+              </datalist>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!--Dream Section-->
+
+      <section class="dream">
+        <label for="dream">
+          <h4>About your dream</h4>
+        </label>
         <br>
-        <section class="password">
-          <label for="password">PASSWORD:</label>
-          <input type="password" id="password" name="password" minlength="8" maxlength="16" required>
-        </section>
-        <br>
-        <section class="age">
-          <label for="age">AGE:</label>
-          <input type="number" id="age" name="age" required>
-        </section>
-        <br>
-        <section class="birth">
-          <label for="birth">DATE OF BIRTH:</label>
-          <input type="text" id="birth" name="birth" required>
-        </section>
-        <br>
-        <section class="sex">
-          <label for="sex">Sex:</label>
-          <select id="sex" name="sex">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </section>
-        <br>
-        <section class="personality">
-          <span>Please tell me your personality</span>
-          <br>
-          <span>Bad</span>
-          <input type="range" id="personality" name="personality" min="0" max="10" step="5">
-          <span>Good</span>
-        </section>
-        <br>
-        <section class="ramen">
-          <label for="ramen">Which ramen do you like?</label>
-          <br>
-          <label for="sinramen">Sinramen</label>
-          <input type="checkbox" id="sinramen" name="ramen">
-          <label for="jinramen">Jinramen</label>
-          <input type="checkbox" id="jinramen" name="ramen">
-          <label for="nuguri">Nuguri</label>
-          <input type="checkbox" id="nuguri" name="ramen">
-          <label for="jjapagetti">Jjapagetti</label>
-          <input type="checkbox" id="jjapagetti" name="ramen">
-        <section>
-        <br>
-        <section class="mint">
-          <label for="mint">Do you like MINT-CHOCOLATE?</label>
-          <br>
-          <label for="yes">YES</label>
-          <input type="radio" id="yes" name="mint">
-          <label for="no">NO</label>
-          <input type="radio" id="no" name="mint">
-        </section>
-        <br>
-        <section class="chicken">
-          <label for="chicken">What is your favorite chicken brand?</label>
-          <input type="text" list="chickens" id="chicken" name="chicken" required>
-          <datalist id="chickens">
-            <option value="BBQ">Barbecue</option>
-            <option value="KFC">Kenturcky Fried Chicken</option>
-            <option value="GUBNE">Gubne chicken</option>
-          </datalist>
-        </section>
-        <br>
-        <section class="dream">
-          <label for="dream">Tell me about your dream</label>
-          <br>
-          <textarea id="dream" name="dream" required rows="10" cols="60"></textarea>
-        </section>
-        <br>
-        <input type="submit" value="submit">
-      </form>
-    </main>
-    <hr>
-    <footer>
-      <span>ohdonghwan</span>
-    </footer>
-  </body>
+        <textarea id="dream" name="dream" required rows="10" cols="50"></textarea>
+      </section>
+      
+      <!--Submit-->
+
+      <button id="submit">SUBMIT</button>
+
+    </form>
+    <hr id="bottom-hr">
+  </main>
+  <footer>
+    <p>2021. 01. 10 ohdonghwan</span>
+  </footer>
+</body>
+
 </html>
